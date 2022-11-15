@@ -37,12 +37,12 @@ function markUp(data) {
       .map(item => {
         return `<li><img src=${item.flags.svg} width = 30px, height = 20px></img><span>${item.name.official}</span></li>`;
       })
-      .join();
+      .join('');
     return;
   }
   listRef.innerHTML = '';
   const country = data[0];
-  infoRef.innerHTML = `<div><img src=${
+  infoRef.innerHTML = `<div class = 'country-main'><img src=${
     country.flags.svg
   } width = 60px, height = 45px></img>
   <span>${country.name.official}</span>
@@ -51,5 +51,5 @@ function markUp(data) {
   <p>Population: <span> ${country.population} </span></p>
   <p>Languages: <span> ${Object.values(country.languages)} </span></p>
   `;
-  console.log(country.languages);
+  // console.log(country.languages);
 }
